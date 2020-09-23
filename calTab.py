@@ -21,7 +21,10 @@ def initVec(k):
         denom = np.sqrt(denom2)
         return np.array([1j * b0Val / denom, (c0Val - np.sqrt(b0Val ** 2 + c0Val ** 2)) / denom])
     else:
-        return np.array([0, 1])
+        if c0Val>0:
+            return np.array([1,0])
+        else:
+            return np.array([0,1])
 
 def H0(k):
     '''
